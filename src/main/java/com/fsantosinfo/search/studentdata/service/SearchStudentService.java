@@ -6,5 +6,5 @@ import com.fsantosinfo.search.studentdata.dto.SearchStudentResponseDTO;
 
 public interface SearchStudentService {
 
-    public List<SearchStudentResponseDTO> searchStudentBySchool(Integer schoolId);
+    public List<SearchStudentResponseDTO> searchStudentBySchoolId(Integer schoolId);
 }

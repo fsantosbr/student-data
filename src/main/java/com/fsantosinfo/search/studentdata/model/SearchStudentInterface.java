@@ -11,7 +11,7 @@ public interface SearchStudentInterface {
     Integer getTotalClassRoom();
     Integer getTotalTeachers();
 
-    default SearchStudentResponseDTO toDto(){
+    default SearchStudentResponseDTO toStudentResponseDTO(){
         return SearchStudentResponseDTO.builder()
             .studentName(getStudentName())
             .studentLastname(getStudentLastname())

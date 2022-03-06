@@ -18,10 +18,10 @@ public class SearchStudentServiceImpl implements SearchStudentService{
     private StudentRepository studentRepository;    
 
     @Override
-    public List<SearchStudentResponseDTO> searchStudentBySchool(Integer schoolId) {
+    public List<SearchStudentResponseDTO> searchStudentBySchoolId(Integer schoolId) {
         List<SearchStudentInterface> studentResultList = this.studentRepository.searchSudentDataBySchoolId(schoolId);
         
-        return studentResultList.stream().map((x) -> x.toDto()).collect(Collectors.toList());
+        return studentResultList.stream().map(SearchStudentInterface::toStudentResponseDTO).collect(Collectors.toList());
     }
     
 }

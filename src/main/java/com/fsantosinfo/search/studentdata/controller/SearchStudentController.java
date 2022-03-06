@@ -19,9 +19,9 @@ public class SearchStudentController {
     @Autowired
     private SearchStudentServiceImpl searchService;   
 
-    @GetMapping("")
+    @GetMapping()
     public ResponseEntity<List<SearchStudentResponseDTO>> findStudentDataBySchoolId(
-                            @RequestParam(name = "schoolId", defaultValue = "1") Integer schoolId) {
-        return ResponseEntity.ok().body(this.searchService.searchStudentBySchool(schoolId));
+                            @RequestParam(name = "schoolId", required = true) Integer schoolId) {
+        return ResponseEntity.ok().body(this.searchService.searchStudentBySchoolId(schoolId));
                         }    
 }
